@@ -1,7 +1,7 @@
 
-Name of Quantlet: Wetter-Scagnostics
+Name of Quantlet: SL_20200403_Wetter
 
-Published in: 
+Published in: SL_Klagenfurt_2020
 
 Description: "Calculates the scagnostic measures for the dataset and plots the SPLOM, the scagnostics SPLOM and the heat-map of the scagnostic measures"
 
