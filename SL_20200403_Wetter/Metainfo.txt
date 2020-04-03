@@ -1,11 +1,11 @@
 
-Name of Quantlet: SL_20200403_Wetter
+Name of Quantlet: SL_2020_Wetter_Scagnostics
 
 Published in: SL_Klagenfurt_2020
 
 Description: "Calculates the scagnostic measures for the dataset and plots the SPLOM, the scagnostics SPLOM and the heat-map of the scagnostic measures"
 
-Keywords: 'scagnostics, scagnostic coefficients, SPLOM, heat-map'
+Keywords: 'scagnostics, scagnostic coefficients, SPLOM, heat-map, weather'
 
 Author: Alina Kohlmayer and Michaela Kordasch
 
