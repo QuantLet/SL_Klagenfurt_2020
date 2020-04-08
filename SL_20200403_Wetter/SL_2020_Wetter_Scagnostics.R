@@ -1,4 +1,4 @@
-#A real Scagnostics application on money
+#A real Scagnostics application on the weather in Semlach
 #Authors: Alina Kohlmayer & Michaela Kordasch
 
 # Packages needed -----------------------------------------------------------
@@ -47,12 +47,6 @@ dev.off()
 png("scatterplot.png")
 plot(df.w)
 dev.off()
-
-
-# Alphashape ----------------------------------------------------------------
-
-ashape.obj <- ashape(df.w, alpha = 0)
-str(ashape.obj)
 
 
 # DT & Minimum Spanning Tree -----------------------------------------------------
