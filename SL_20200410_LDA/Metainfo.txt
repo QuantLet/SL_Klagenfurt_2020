@@ -1,0 +1,13 @@
+
+Name of Quantlet: SL_20200410_LDA
+
+Published in: SL_Klagenfurt_2020
+
+Description: "LDA analysis of the abstracts of a set of scientifique papers to understand main topics that are handled in those papers."
+
+Keywords: 'LDA, heat-map, topic-modelling'
+
+Author: Bousbiat Hafsa
+
+Submitted:  Fri, April 10 2020 by Bousbiat Hafsa
+Datafile: abstract_all.csv
