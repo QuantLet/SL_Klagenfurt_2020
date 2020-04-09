@@ -1,0 +1,13 @@
+Name of Quantlet: SL_2020_COVID19_in_Austria
+
+Published in: SL_Klagenfurt_2020
+
+Description: "Plots of COVID19 data in Austria in the time interval 27.02. - 02.04. in R. Additionaly a wordcloud - code from Python. Corona.txt is needed to create the wordcloud."
+
+Keywords: 'corona, COVID-19, R-plots, wordcloud, ATX, oil-price'
+
+Author: Chiara Wang and Julia Guggenberger
+
+Submitted:  Thu, April 9 2020 by Chiara Wang 
+
+Datafile: Corona.txt, .csv tables for R-plots
