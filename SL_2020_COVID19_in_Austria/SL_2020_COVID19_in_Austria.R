@@ -185,4 +185,3 @@ par(bg=NA)
 plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Oil-Price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in €")
 axis.POSIXct(1, at = seq(start, end, by = '10 days'))
 dev.off()
-
