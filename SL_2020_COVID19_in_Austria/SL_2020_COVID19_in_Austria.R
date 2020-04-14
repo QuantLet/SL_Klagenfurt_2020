@@ -1,67 +1,32 @@
+getwd()
+setwd("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/")
+
 #######   data infections    ######################################################################################
 
-inf<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsAUT.csv", header=TRUE, sep=".", dec=",")
-infections<-as.matrix(inf)
-
-infB<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsB.csv", header=TRUE, sep=".", dec=",")
-infectionsB<-as.matrix(infB)
-
-infK<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsK.csv", header=TRUE, sep=".", dec=",")
-infectionsK<-as.matrix(infK)
-
-infV<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsV.csv", header=TRUE, sep=".", dec=",")
-infectionsV<-as.matrix(infV)
-
-infS<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsS.csv", header=TRUE, sep=".", dec=",")
-infectionsS<-as.matrix(infS)
-
-infSt<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsSt.csv", header=TRUE, sep=".", dec=",")
-infectionsSt<-as.matrix(infSt)
-
-infN<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsN.csv", header=TRUE, sep=".", dec=",")
-infectionsN<-as.matrix(infN)
-
-infO<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsO.csv", header=TRUE, sep=".", dec=",")
-infectionsO<-as.matrix(infO)
-
-infT<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsT.csv", header=TRUE, sep=".", dec=",")
-infectionsT<-as.matrix(infT)
-
-infW<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/infectionsW.csv", header=TRUE, sep=".", dec=",")
-infectionsW<-as.matrix(infW)
+infections<-as.matrix(data(infectionsAUT.csv))
+infectionsB<-as.matrix(data(infectionsB.csv))
+infectionsK<-as.matrix(data(infectionsK.csv))
+infectionsV<-as.matrix(data(infectionsV.csv))
+infectionsS<-as.matrix(data(infectionsS.csv))
+infectionsSt<-as.matrix(data(infectionsSt.csv))
+infectionsN<-as.matrix(data(infectionsN.csv))
+infectionsO<-as.matrix(data(infectionsO.csv))
+infectionsT<-as.matrix(data(infectionsT.csv))
+infectionsW<-as.matrix(data(infectionsW.csv))
 
 
 #########   data deaths    #########################################################################################################
 
-deaths<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deaths.csv", header=TRUE, sep=".", dec=",")
-deaths<-as.matrix(deaths)
-
-deathsB<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsB.csv", header=TRUE, sep=".", dec=",")
-deathsB<-as.matrix(deathsB)
-
-deathsK<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsK.csv", header=TRUE, sep=".", dec=",")
-deathsK<-as.matrix(deathsK)
-
-deathsN<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsN.csv", header=TRUE, sep=".", dec=",")
-deathsN<-as.matrix(deathsN)
-
-deathsO<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsO.csv", header=TRUE, sep=".", dec=",")
-deathsO<-as.matrix(deathsO)
-
-deathsV<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsV.csv", header=TRUE, sep=".", dec=",")
-deathsV<-as.matrix(deathsV)
-
-deathsS<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsS.csv", header=TRUE, sep=".", dec=",")
-deathsS<-as.matrix(deathsS)
-
-deathsSt<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsSt.csv", header=TRUE, sep=".", dec=",")
-deathsSt<-as.matrix(deathsSt)
-
-deathsT<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsT.csv", header=TRUE, sep=".", dec=",")
-deathsT<-as.matrix(deathsT)
-
-deathsW<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/deathsW.csv", header=TRUE, sep=".", dec=",")
-deathsW<-as.matrix(deathsW)
+deaths<-as.matrix(data(deaths.csv))
+deathsB<-as.matrix(data(deathsB.csv))
+deathsK<-as.matrix(data(deathsK.csv))
+deathsN<-as.matrix(data(deathsN.csv))
+deathsO<-as.matrix(data(deathsO.csv))
+deathsV<-as.matrix(data(deathsV.csv))
+deathsS<-as.matrix(data(deathsS.csv))
+deathsSt<-as.matrix(data(deathsSt.csv))
+deathsT<-as.matrix(data(deathsT.csv))
+deathsW<-as.matrix(data(deathsW.csv))
 
 
 
@@ -83,7 +48,7 @@ axis.POSIXct(1, at = seq(start, end, by = '1 days'))
 dev.off()
 
 
-####### plot infections Budeslaender #####################################
+####### plot inf Budesländer #####################################
 
 start <- as.POSIXct('2020-02-26 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
@@ -164,10 +129,10 @@ plot(day, deathsW, col="orange", type="l", xlab="", ylab="", yaxt="n", xaxt="n",
 legend(x=5, y=30, c("Burgenland", "Carinthia", "Lower Austria", "Upper Austria", "Salzburg", "Styria", "Vorarlberg", "Tyrol", "Vienna"), cex=.8, col=c("blue","green", "red", "purple", "cyan", "magenta", "black", "gray", "orange"), pch=c(1:9))
 dev.off()
 
+
 ############    doubling time    ##########################################################################################
 
-doubling<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/doubling.csv", header=TRUE, sep=".", dec=",")
-doublingtime<-as.matrix(doubling)
+doublingtime<-as.matrix(data(doubling.csv))
 doublingtime
 
 start <- as.POSIXct('2020-03-08 0:00:00')
@@ -188,8 +153,7 @@ dev.off()
 
 ################   ATX  ###########################################################
 
-atx<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/atx.csv", header=TRUE, sep=".", dec=",")
-atx<-as.matrix(atx)
+atx<-as.matrix(data(atx.csv))
 
 
 start <- as.POSIXct('2019-04-09 0:00:00')
@@ -198,19 +162,17 @@ x <- seq(start, end, length.out = 35)
 y <- atx
 y
 df <- data.frame(x, y)
-#plot(y ~ x, data = df) #:(
 
 png("atx.png")
 par(bg=NA)
 plot(y ~ x, data = df, xaxt = 'n', type="l", main="ATX from 9.4.2019 to 9.4.2020", xlab="1 year in steps of 10 days", ylab="Share Price")
-axis.POSIXct(1, at = seq(start, end, by = '10 days')) #:)
+axis.POSIXct(1, at = seq(start, end, by = '10 days')) 
 dev.off()
 
 
 ##########    oil     ################################################
 
-oil<-read.csv("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/oil.csv", header=TRUE, sep=".", dec=",")
-oil<-as.matrix(oil)
+oil<-as.matrix(data(oil.csv))
 
 start <- as.POSIXct('2019-04-09 0:00:00')
 end <- as.POSIXct('2020-04-09 0:00:00')
@@ -220,7 +182,6 @@ df <- data.frame(x, y)
 
 png("oil.png")
 par(bg=NA)
-plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Oil-Price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in ?")
+plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Oil-Price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in €")
 axis.POSIXct(1, at = seq(start, end, by = '10 days'))
 dev.off()
-
