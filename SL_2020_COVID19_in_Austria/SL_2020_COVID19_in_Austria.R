@@ -48,7 +48,7 @@ axis.POSIXct(1, at = seq(start, end, by = '1 days'))
 dev.off()
 
 
-####### plot inf Budesl‰nder #####################################
+####### plot inf Budesl√§nder #####################################
 
 start <- as.POSIXct('2020-02-26 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
@@ -182,7 +182,7 @@ df <- data.frame(x, y)
 
 png("oil.png")
 par(bg=NA)
-plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Oil-Price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in Ä")
+plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Oil-Price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in ‚Ç¨")
 axis.POSIXct(1, at = seq(start, end, by = '10 days'))
 dev.off()
 
