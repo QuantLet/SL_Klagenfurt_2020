@@ -1,7 +1,7 @@
 getwd()
 setwd("C:/Users/julia/Desktop/Uni/Master/Statistical Learning/")
 
-#######   data infections    ######################################################################################
+####### data infections    
 
 infections<-as.matrix(data(infectionsAUT.csv))
 infectionsB<-as.matrix(data(infectionsB.csv))
@@ -14,8 +14,7 @@ infectionsO<-as.matrix(data(infectionsO.csv))
 infectionsT<-as.matrix(data(infectionsT.csv))
 infectionsW<-as.matrix(data(infectionsW.csv))
 
-
-#########   data deaths    #########################################################################################################
+####### data deaths 
 
 deaths<-as.matrix(data(deaths.csv))
 deathsB<-as.matrix(data(deathsB.csv))
@@ -28,12 +27,7 @@ deathsSt<-as.matrix(data(deathsSt.csv))
 deathsT<-as.matrix(data(deathsT.csv))
 deathsW<-as.matrix(data(deathsW.csv))
 
-
-
-########   plots infections    ############################################################################################
-
-InfectionsPerDay<-cbind(days, infections)
-InfectionsPerDay
+####### plot infections AUT
 
 start <- as.POSIXct('2020-02-26 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
@@ -47,8 +41,7 @@ plot(y ~ x, data = df, xaxt = 'n', type="l", main="Infections from 26.02 to 01.0
 axis.POSIXct(1, at = seq(start, end, by = '1 days'))
 dev.off()
 
-
-####### plot inf Budesländer #####################################
+####### plot infections Bundeslaender
 
 start <- as.POSIXct('2020-02-26 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
@@ -80,10 +73,9 @@ plot(days, infectionsW, col="orange", type="l", xlab="", ylab="", yaxt="n", xaxt
 legend(x=5, y=2000, c("Burgenland", "Carinthia", "Lower Austria", "Upper Austria", "Salzburg", "Styria", "Vorarlberg", "Tyrol", "Vienna"), cex=.8, col=c("blue","green", "red", "purple", "cyan", "magenta", "black", "gray", "orange"), pch=c(1:9))
 dev.off()
 
+####### plot deaths AUT 
 
-#########   plots deaths    ##########################################################################################
-
-start <- as.POSIXct('2020-03-08 0:00:00')
+start <- as.POSIXct('2020-02-26 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
 x <- seq(start, end, length.out = 36)
 y <- deaths
@@ -91,12 +83,13 @@ df <- data.frame(x, y)
 
 png("deaths.png")
 par(bg=NA)
-plot(y ~ x, data = df, xaxt = 'n', type="l",main="Deaths from 08.03 to 01.04 in Austria", xlab="", ylab=" total number of deaths")
+plot(y ~ x, data = df, xaxt = 'n', type="l",main="Deaths from 26.02 to 01.04 in Austria", xlab="", ylab=" total number of deaths")
 axis.POSIXct(1, at = seq(start, end, by = '1 days'))
 dev.off()
 
-#plot(days, deaths, type="l", main="Deaths from 08.03 to 01.04 in Austria", xlab="days", ylab=" total number of deaths", xaxt="n")
+#plot(days, deaths, type="l", main="Deaths from 26.02 to 01.04 in Austria", xlab="days", ylab=" total number of deaths", xaxt="n")
 
+####### plot deaths Bundeslaender 
 
 start <- as.POSIXct('2020-03-08 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
@@ -129,13 +122,12 @@ plot(day, deathsW, col="orange", type="l", xlab="", ylab="", yaxt="n", xaxt="n",
 legend(x=5, y=30, c("Burgenland", "Carinthia", "Lower Austria", "Upper Austria", "Salzburg", "Styria", "Vorarlberg", "Tyrol", "Vienna"), cex=.8, col=c("blue","green", "red", "purple", "cyan", "magenta", "black", "gray", "orange"), pch=c(1:9))
 dev.off()
 
-
-############    doubling time    ##########################################################################################
+####### doubling time   
 
 doublingtime<-as.matrix(data(doubling.csv))
 doublingtime
 
-start <- as.POSIXct('2020-03-08 0:00:00')
+start <- as.POSIXct('2020-02-27 0:00:00')
 end <- as.POSIXct('2020-04-01 0:00:00')
 x <- seq(start, end, length.out = 35)
 y <- doublingtime
@@ -143,24 +135,41 @@ df <- data.frame(x, y)
 
 png("doublingtime.png")
 par(bg=NA)
-plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Doublingtime from 27.02 to 02.04 in Austria", xlab="", ylab="doublingtime in days")
+plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development Doubling time from 27.02 to 01.04 in Austria", xlab="", ylab="doublingtime in days")
 axis.POSIXct(1, at = seq(start, end, by = '1 days'))
 dev.off()
 
-#plot(day, doublingtime, type="l", main="Development from the Doublingtime from 27.02 to 02.04 in Austria", xlab="days", ylab="doublingtime in days", xaxt="n")
+#plot(day, doublingtime, type="l", main="Development Doubling time from 27.02 to 01.04 in Austria", xlab="days", ylab="doublingtime in days", xaxt="n")
 
+####### active vs. total cases 
 
+total<-as.matrix(data(cases.csv))
+active<-as.matrix(data(active.csv))
+day<-c(1:57)
 
-################   ATX  ###########################################################
+start <- as.POSIXct('2020-02-15 0:00:00')
+end <- as.POSIXct('2020-04-10 0:00:00')
+x <- seq(start, end, length.out = 55)
+y <- total
+df <- data.frame(x, y)
+
+png("total.png")
+par(bg=NA)
+plot(y ~ x, data = df, xaxt = 'n', type="l", main="Active cases vs. total cases from 15.02 to 10.04 in Austria", xlab="", ylab="number of cases")
+axis.POSIXct(1, at = seq(start, end, by = '1 days'))
+par(new=TRUE)
+plot(day, active, col="red", type="l", xlab="", ylab="", yaxt="n", xaxt="n")
+legend(x=5, y=6000, c("total cases", "active cases"), cex=.8, col=c("black","red"), pch=c(1:9))
+dev.off()
+
+####### ATX  
 
 atx<-as.matrix(data(atx.csv))
-
 
 start <- as.POSIXct('2019-04-09 0:00:00')
 end <- as.POSIXct('2020-04-09 0:00:00')
 x <- seq(start, end, length.out = 35)
 y <- atx
-y
 df <- data.frame(x, y)
 
 png("atx.png")
@@ -169,8 +178,7 @@ plot(y ~ x, data = df, xaxt = 'n', type="l", main="ATX from 9.4.2019 to 9.4.2020
 axis.POSIXct(1, at = seq(start, end, by = '10 days')) 
 dev.off()
 
-
-##########    oil     ################################################
+####### oil 
 
 oil<-as.matrix(data(oil.csv))
 
@@ -182,6 +190,7 @@ df <- data.frame(x, y)
 
 png("oil.png")
 par(bg=NA)
-plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development from the Oil-Price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in €")
+plot(y ~ x, data = df, xaxt = 'n', type="l",main="Development Oil price from 9.4.2019 to 9.4.2020 in Austria", xlab="1 year in steps of 10 days", ylab="Oil Price in ?")
 axis.POSIXct(1, at = seq(start, end, by = '10 days'))
 dev.off()
+
